@@ -3,7 +3,7 @@ var app = express();
 
 // 3000 is good for testing on your computer
 // process.enc.port is what heroku uses
-var PORT = process.env.port || 3000
+var PORT = process.env.PORT || 3000;
 
 var middleware = require('./middleware.js') // fetches code from middleware.js file
 
