@@ -2,23 +2,17 @@ var express = require('express');
 var app = express();
 var PORT = 3000
 
+var middleware = require('./middleware.js') // fetches code from middleware.js file
+
 // / is the root url
 // app.get corresponds to the http request method
 // app.get('/', function (req, res) { // request and response
 // 	res.send('hello Express'); // res.send specifies what to send back to the user
 // });
 
-var middleware = {
-	requireAuthentication: function (req, res, next) {
-		console.log('private route hit');
-		next();
-	},
-	logger: function (req, res, next) {
-		var date = new Date().toString();
-		console.log('request: ' + req.method + ' ' + req.originalUrl + ' on ' + date);
-		next();
-	}
-};
+var middleware = require('./middleware.js')
+
+
 
 // this will run every time a page is requested anywehre on the localhost port (i.e. it's global)
 // if you want route-level middleware, specify it as the second argument in app.get, as below
