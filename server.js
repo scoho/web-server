@@ -27,7 +27,7 @@ var middleware = {
 app.use(middleware.logger) // global log
 
 app.get('/about', middleware.requireAuthentication, function (req, res) {
-	res.send('about page');
+	res.send('this is the about page');
 });
 
 // __dirname grabs the current working directory (that's two underscores at the beginning)
